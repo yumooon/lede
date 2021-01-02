@@ -89,9 +89,6 @@ jobs:
           sed -i "8i uci set network.lan.gateway='192.168.1.1'" ./package/lean/default-settings/files/zzz-default-settings  # 默认网关地址（主路由 IP）
           sed -i "9i uci set network.lan.dns='192.168.1.1'" ./package/lean/default-settings/files/zzz-default-settings  # 默认上游 DNS 地址
           sed -i "10i uci commit network\n" ./package/lean/default-settings/files/zzz-default-settings
-          EOF
-          sed -i 's/^[ \t]*//g' ./.config
-          make defconfig
 
       - name: Make download
         run: |
